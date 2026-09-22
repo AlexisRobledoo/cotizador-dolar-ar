@@ -8,8 +8,8 @@ UMBRAL_BLUE = 1000  # cambiá este número al que quieras
 
 def enviar_alerta_telegram(mensaje):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    requests.get(url, params={"chat_id": TELEGRAM_CHAT_ID, "text": mensaje})
-
+    resultado = requests.get(url, params={"chat_id": TELEGRAM_CHAT_ID, "text": mensaje})
+    print(resultado.json())  # <-- esta línea nueva nos muestra qué contestó Telegram
 respuesta = requests.get("https://dolarapi.com/v1/dolares")
 cotizaciones = respuesta.json()
 
