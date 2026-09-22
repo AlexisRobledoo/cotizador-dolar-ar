@@ -4,7 +4,7 @@ from datetime import datetime
 from config import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
 
 # Acá definís el valor que querés vigilar del dólar blue
-UMBRAL_BLUE = 1000  # cambiá este número al que quieras
+UMBRAL_BLUE = 1600 # cambiá este número al que quieras
 
 def enviar_alerta_telegram(mensaje):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
