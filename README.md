@@ -12,8 +12,8 @@ Script en Python que consulta en tiempo real las cotizaciones del dólar en Arge
 - 🚨 Envía alertas por Telegram cuando algún dólar supera un umbral configurable, definido individualmente para cada tipo
 - ⏰ Se ejecuta automáticamente cada hora mediante el Programador de tareas de Windows
 
-## 📸 Ejemplo de uso
-Oficial: compra $1485 - venta $1535
+## 📸 Ejemplo de uso Oficial:
+ compra $1485 - venta $1535
 Blue: compra $1535 - venta $1555
 Bolsa: compra $1530.4 - venta $1536.6
 ...
