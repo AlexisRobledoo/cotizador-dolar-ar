@@ -11,7 +11,7 @@ UMBRALES = {
     "Contado con liquidación": 1600,
     "Mayorista": 1600,
     "Cripto": 1600,
-    "Tarjeta": 1600,
+    "Tarjeta": 2000,
 }
 
 def enviar_alerta_telegram(mensaje):
