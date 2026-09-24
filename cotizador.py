@@ -8,9 +8,9 @@ UMBRALES = {
     "Oficial": 1600,
     "Blue": 1600,
     "Bolsa": 1600,
-    "Contado con liquidación": 1600,
+    "Contado con liquidación": 1615,
     "Mayorista": 1600,
-    "Cripto": 1600,
+    "Cripto": 1610,
     "Tarjeta": 2000,
 }
 
