@@ -1,4 +1,5 @@
 # 💵 Cotizador Dólar AR
+🌎 [English](README.en.md) | **Español**
 
 Script en Python que consulta en tiempo real las cotizaciones del dólar en Argentina (oficial, blue, MEP, CCL, cripto, tarjeta y mayorista), guarda un histórico, y envía alertas automáticas por Telegram cuando algún valor supera un umbral definido.
 
@@ -71,7 +72,7 @@ UMBRALES = {
 
 ## 📌 Próximas mejoras
 
-- [ ] Bot interactivo que responda preguntas en tiempo real
+- [x] Bot interactivo que responda preguntas en tiempo real
 - [ ] Gráficos de la evolución histórica
 - [ ] Interfaz web simple
 
