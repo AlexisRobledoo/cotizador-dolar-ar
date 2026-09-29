@@ -8,10 +8,10 @@ UMBRALES = {
     "Oficial": 1600,
     "Blue": 1600,
     "Bolsa": 1600,
-    "Contado con liquidación": 1615,
-    "Mayorista": 1600,
-    "Cripto": 1610,
-    "Tarjeta": 2000,
+    "Contado con liquidación": 2000,
+    "Mayorista": 1800,
+    "Cripto": 2000,
+    "Tarjeta": 3000,
 }
 
 def enviar_alerta_telegram(mensaje):
