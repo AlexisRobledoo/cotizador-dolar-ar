@@ -24,6 +24,21 @@ Bolsa: compra $1530.4 - venta $1536.6
 🚨 Alerta enviada: Blue superó $1650
 
 
+## 📈 Dashboard
+
+🔗 **Ver online:** https://alexisrobledoo.github.io/cotizador-dolar-ar/
+
+Página web que lee `historico.csv` y muestra:
+
+- Valor actual de cada dólar y su variación en el período
+- Gráfico interactivo de la evolución (elegís qué dólares comparar)
+- Brecha cambiaria entre el blue y el oficial
+- Ranking de cuál está más caro hoy
+- Tabla con compra, venta, mínimo y máximo
+- Filtros de 7 días, 14 días o todo el historial, y modo oscuro
+
+Hecho con HTML, CSS, JavaScript y [Chart.js](https://www.chartjs.org/). Para verlo en tu compu, abrí `index.html` con la extensión Live Server de VS Code.
+
 ## 🛠️ Tecnologías
 
 - Python 3.14
@@ -73,8 +88,8 @@ UMBRALES = {
 ## 📌 Próximas mejoras
 
 - [x] Bot interactivo que responda preguntas en tiempo real
-- [ ] Gráficos de la evolución histórica
-- [ ] Interfaz web simple
+- [x] Gráficos de la evolución histórica
+- [x] Interfaz web simple (dashboard)
 
 ## 👤 Autor
 

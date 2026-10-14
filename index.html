@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Dólar AR | Evolución de las cotizaciones</title>
+  <meta name="description"
+    content="Dashboard con la evolución de las cotizaciones del dólar en Argentina: oficial, blue, MEP, CCL, cripto, tarjeta y mayorista.">
+  <link rel="stylesheet" href="web/styles.css">
+</head>
+
+<body>
+  <header class="top">
+    <div class="wrap top__inner">
+      <div>
+        <h1>💵 Dashboard Dólar AR</h1>
+        <p class="sub" id="subtitulo">Cargando datos…</p>
+      </div>
+      <button class="theme-btn" id="tema" type="button" aria-label="Cambiar tema claro/oscuro">🌓</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- FILTROS: una sola fila, arriba de todo. Afectan a todo lo de abajo -->
+    <section class="filters" aria-label="Filtros">
+      <div class="seg" role="group" aria-label="Período" id="periodos">
+        <button type="button" data-dias="7">7 días</button>
+        <button type="button" data-dias="14">14 días</button>
+        <button type="button" data-dias="0" class="activo">Todo</button>
+      </div>
+      <p class="hint">Los porcentajes muestran cuánto subió o bajó cada dólar en el período elegido.</p>
+    </section>
+
+    <!-- TARJETAS: valor actual de cada dólar + variación en el período -->
+    <section class="kpis" id="kpis" aria-label="Cotizaciones actuales"></section>
+
+    <!-- GRÁFICO PRINCIPAL -->
+    <section class="card">
+      <div class="card__head">
+        <div>
+          <h2>Evolución del precio de venta</h2>
+          <p class="hint">Elegí qué dólares comparar</p>
+        </div>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Tipos de dólar"></div>
+      <div class="chart-box"><canvas id="graficoEvolucion"
+          aria-label="Gráfico de líneas de la evolución del dólar"></canvas></div>
+    </section>
+
+    <div class="grid2">
+      <!-- BRECHA -->
+      <section class="card">
+        <div class="card__head">
+          <div>
+            <h2>Brecha cambiaria</h2>
+            <p class="hint">Cuánto más caro está el blue que el oficial (%)</p>
+          </div>
+          <p class="big" id="brechaActual">–</p>
+        </div>
+        <div class="chart-box chart-box--sm"><canvas id="graficoBrecha"
+            aria-label="Gráfico de la brecha cambiaria"></canvas></div>
+      </section>
+
+      <!-- RANKING -->
+      <section class="card">
+        <div class="card__head">
+          <div>
+            <h2>¿Cuál está más caro hoy?</h2>
+            <p class="hint">Precio de venta en la última medición</p>
+          </div>
+        </div>
+        <div class="chart-box chart-box--sm"><canvas id="graficoRanking"
+            aria-label="Gráfico de barras con el precio actual de cada dólar"></canvas></div>
+      </section>
+    </div>
+
+    <!-- TABLA: la misma info que los gráficos, en texto -->
+    <section class="card">
+      <details>
+        <summary>
+          <h2>Ver datos en tabla</h2>
+        </summary>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Dólar</th>
+                <th>Compra</th>
+                <th>Venta</th>
+                <th>Mínimo (venta)</th>
+                <th>Máximo (venta)</th>
+                <th>Variación</th>
+              </tr>
+            </thead>
+            <tbody id="tabla"></tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="wrap foot">
+    <p>Datos: <a href="https://dolarapi.com" target="_blank" rel="noopener">DolarAPI</a>, registrados con
+      <a href="https://github.com/AlexisRobledoo/cotizador-dolar-ar" target="_blank"
+        rel="noopener">cotizador-dolar-ar</a>.
+    </p>
+    <p>Diseño y desarrollo: <a href="https://www.instagram.com/alexis.robledoo/" target="_blank"
+        rel="noopener">@alexis.robledoo</a></p>
+  </footer>
+
+  <!-- Chart.js: librería para dibujar gráficos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="web/app.js"></script>
+</body>
+
+</html>

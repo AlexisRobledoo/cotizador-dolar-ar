@@ -26,6 +26,21 @@ Bolsa: compra $1530.4 - venta $1536.6
 🚨 Alerta enviada: Blue superó $1650
 
 
+## 📈 Dashboard
+
+🔗 **Live:** https://alexisrobledoo.github.io/cotizador-dolar-ar/
+
+Web page that reads `historico.csv` and shows:
+
+- Current value of each rate and its change over the period
+- Interactive evolution chart (pick which rates to compare)
+- Exchange gap between blue and official rates
+- Ranking of the most expensive rate today
+- Table with buy, sell, min and max
+- 7-day / 14-day / all-time filters and dark mode
+
+Built with HTML, CSS, JavaScript and [Chart.js](https://www.chartjs.org/). To run it locally, open `index.html` with the VS Code Live Server extension.
+
 ## 🛠️ Built with
 
 - Python 3.14
@@ -77,8 +92,8 @@ UMBRALES = {
 ## 📌 Roadmap
 
 - [x] Interactive bot that responds to questions in real time
-- [ ] Historical evolution charts
-- [ ] Simple web interface
+- [x] Historical evolution charts
+- [x] Simple web interface (dashboard)
 
 ## 👤 Author
 
