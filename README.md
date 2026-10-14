@@ -11,7 +11,7 @@ Script en Python que consulta en tiempo real las cotizaciones del dólar en Arge
 - 🔄 Consulta cotizaciones actualizadas usando la [API de DolarAPI](https://dolarapi.com)
 - 📊 Guarda un registro histórico en `historico.csv` (fecha, tipo de dólar, compra, venta)
 - 🚨 Envía alertas por Telegram cuando algún dólar supera un umbral configurable, definido individualmente para cada tipo
-- ⏰ Se ejecuta automáticamente cada hora mediante el Programador de tareas de Windows
+- ⏰ Se ejecuta automáticamente cada hora en la nube con **GitHub Actions**: guarda los datos nuevos en el repo y el dashboard online se actualiza solo
 
 ## 📸 Ejemplo de uso
 

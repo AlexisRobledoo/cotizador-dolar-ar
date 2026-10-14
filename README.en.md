@@ -12,7 +12,7 @@ Python script that fetches real-time exchange rates for the US dollar in Argenti
 - 🔄 Fetches up-to-date exchange rates using the [DolarAPI](https://dolarapi.com)
 - 📊 Logs a historical record to `historico.csv` (date, rate type, buy, sell)
 - 🚨 Sends Telegram alerts when any rate crosses a configurable threshold, set individually per rate type
-- ⏰ Runs automatically every hour via Windows Task Scheduler
+- ⏰ Runs automatically every hour in the cloud with **GitHub Actions**: new data is committed to the repo and the live dashboard updates itself
 - 🤖 Interactive Telegram bot that responds to natural-language questions about specific rates
 
 ## 📸 Example output
