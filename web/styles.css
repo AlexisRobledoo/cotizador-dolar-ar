@@ -1,0 +1,397 @@
+/* =========================================================
+   Dashboard Dólar AR — estilos
+   Colores definidos como variables: un juego para modo claro
+   y otro para modo oscuro.
+   ========================================================= */
+
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.10);
+  --up: #b42318;
+  /* dólar sube = más caro (rojo) */
+  --down: #006300;
+  /* dólar baja (verde) */
+  --accent: #2a78d6;
+
+  /* Un color fijo para cada tipo de dólar (siempre el mismo) */
+  --s-blue: #2a78d6;
+  --s-oficial: #eb6834;
+  --s-bolsa: #1baf7a;
+  --s-ccl: #eda100;
+  --s-mayorista: #e87ba4;
+  --s-cripto: #008300;
+  --s-tarjeta: #6250d6;
+}
+
+/* Modo oscuro: según la configuración del sistema... */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --up: #f97066;
+    --down: #0ca30c;
+    --accent: #3987e5;
+    --s-blue: #3987e5;
+    --s-oficial: #d95926;
+    --s-bolsa: #199e70;
+    --s-ccl: #c98500;
+    --s-mayorista: #d55181;
+    --s-cripto: #008300;
+    --s-tarjeta: #9085e9;
+  }
+}
+
+/* ...o elegido a mano con el botón ◐ */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --ink: #f0efec;
+  --ink-2: #c3c2b7;
+  --muted: #898781;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgba(255, 255, 255, 0.10);
+  --up: #f97066;
+  --down: #0ca30c;
+  --accent: #3987e5;
+  --s-blue: #3987e5;
+  --s-oficial: #d95926;
+  --s-bolsa: #199e70;
+  --s-ccl: #c98500;
+  --s-mayorista: #d55181;
+  --s-cripto: #008300;
+  --s-tarjeta: #9085e9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--page);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------- Encabezado ---------- */
+.top {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 20px;
+}
+
+.top__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 16px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.sub,
+.hint {
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--page);
+  color: var(--ink);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ---------- Filtros ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.seg button {
+  border: 0;
+  background: transparent;
+  color: var(--ink-2);
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.seg button+button {
+  border-left: 1px solid var(--border);
+}
+
+.seg button:hover {
+  background: var(--grid);
+}
+
+.seg button.activo {
+  background: var(--ink);
+  color: var(--surface);
+  font-weight: 600;
+}
+
+/* ---------- Tarjetas (KPIs) ---------- */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.kpi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.kpi__name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+/* Rayita del color de la serie, al lado del nombre */
+.kpi__name::before {
+  content: "";
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--c);
+}
+
+.kpi__value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.kpi__delta {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.kpi__delta.sube {
+  color: var(--up);
+}
+
+.kpi__delta.baja {
+  color: var(--down);
+}
+
+.kpi__delta.igual {
+  color: var(--muted);
+}
+
+/* ---------- Tarjetas de gráficos ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.big {
+  font-size: 1.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.chart-box {
+  position: relative;
+  height: 340px;
+}
+
+.chart-box--sm {
+  height: 260px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.grid2 .card {
+  margin-bottom: 16px;
+}
+
+/* Botones para elegir qué dólares ver */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--ink-2);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.chip::before {
+  content: "";
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--c);
+  opacity: 0.35;
+}
+
+.chip[aria-pressed="true"] {
+  color: var(--ink);
+  border-color: var(--ink-2);
+  font-weight: 600;
+}
+
+.chip[aria-pressed="true"]::before {
+  opacity: 1;
+}
+
+/* ---------- Tabla ---------- */
+summary {
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+summary h2 {
+  display: inline;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  text-align: right;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--grid);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+th:first-child,
+td:first-child {
+  text-align: left;
+}
+
+th {
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+/* ---------- Pie ---------- */
+.foot {
+  color: var(--ink-2);
+  font-size: 0.85rem;
+  padding-top: 8px;
+  padding-bottom: 32px;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 1000px) {
+  .kpis {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .chart-box {
+    height: 280px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  .kpi__value {
+    font-size: 1.35rem;
+  }
+}
