@@ -1,22 +1,23 @@
-# 💵 Argentine Dollar Rate Tracker
+# Argentine Dollar Rate Tracker
 
-🌎 **English** | [Español](README.md)
+**English** | [Español](README.md)
 
 Python script that fetches real-time exchange rates for the US dollar in Argentina (official, blue/parallel, MEP, CCL, crypto, card, and wholesale rates), keeps a historical log, and sends automatic Telegram alerts when any rate crosses a defined threshold.
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## ✨ Features
+## Features
 
-- 🔄 Fetches up-to-date exchange rates using the [DolarAPI](https://dolarapi.com)
-- 📊 Logs a historical record to `historico.csv` (date, rate type, buy, sell)
-- 🚨 Sends Telegram alerts when any rate crosses a configurable threshold, set individually per rate type
-- ⏰ Runs automatically every hour in the cloud with **GitHub Actions**: new data is committed to the repo and the live dashboard updates itself
-- 🤖 Interactive Telegram bot that responds to natural-language questions about specific rates
+- Fetches up-to-date exchange rates using the [DolarAPI](https://dolarapi.com)
+- Logs a historical record to `historico.csv` (date, rate type, buy, sell)
+- Sends Telegram alerts when any rate crosses a configurable threshold, set individually per rate type
+- Runs automatically every hour in the cloud with **GitHub Actions**: new data is committed to the repo and the live dashboard updates itself
+- Interactive Telegram bot that responds to natural-language questions about specific rates
 
-## 📸 Example output
+## Example output
 
+```text
 Oficial: compra $1485 - venta $1535
 Blue: compra $1535 - venta $1555
 Bolsa: compra $1530.4 - venta $1536.6
@@ -24,11 +25,11 @@ Bolsa: compra $1530.4 - venta $1536.6
 
 ✅ Cotizaciones guardadas en historico.csv
 🚨 Alerta enviada: Blue superó $1650
+```
 
+## Dashboard
 
-## 📈 Dashboard
-
-🔗 **Live:** https://alexisrobledoo.github.io/cotizador-dolar-ar/
+**Live:** https://alexisrobledoo.github.io/cotizador-dolar-ar/
 
 Web page that reads `historico.csv` and shows:
 
@@ -41,7 +42,7 @@ Web page that reads `historico.csv` and shows:
 
 Built with HTML, CSS, JavaScript and [Chart.js](https://www.chartjs.org/). To run it locally, open `index.html` with the VS Code Live Server extension.
 
-## 🛠️ Built with
+## Built with
 
 - Python 3.14
 - [Requests](https://docs.python-requests.org/) — for HTTP requests
@@ -50,7 +51,7 @@ Built with HTML, CSS, JavaScript and [Chart.js](https://www.chartjs.org/). To ru
 - Telegram Bot API — for the alert system
 - `csv` and `datetime` modules — for the historical log
 
-## 🚀 Getting started
+## Getting started
 
 **1. Clone the repository**
 ```bash
@@ -77,7 +78,7 @@ python cotizador.py          # one-shot: fetch, log, and alert if needed
 python bot_interactivo.py    # interactive bot, runs continuously
 ```
 
-## ⚙️ Customization
+## Customization
 
 Adjust alert thresholds by editing the `UMBRALES` dictionary in `cotizador.py`:
 
@@ -89,17 +90,17 @@ UMBRALES = {
 }
 ```
 
-## 📌 Roadmap
+## Roadmap
 
 - [x] Interactive bot that responds to questions in real time
 - [x] Historical evolution charts
 - [x] Simple web interface (dashboard)
 
-## 👤 Author
+## Author
 
 Alexis Robledo — Programming student at Universidad del Gran Rosario (UGR)
 [LinkedIn](https://linkedin.com/in/alexis-daniel-robledo)
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.

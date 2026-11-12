@@ -1,20 +1,21 @@
-# 💵 Cotizador Dólar AR
-🌎 [English](README.en.md) | **Español**
+# Cotizador Dólar AR
+[English](README.en.md) | **Español**
 
 Script en Python que consulta en tiempo real las cotizaciones del dólar en Argentina (oficial, blue, MEP, CCL, cripto, tarjeta y mayorista), guarda un histórico, y envía alertas automáticas por Telegram cuando algún valor supera un umbral definido.
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## ✨ Funcionalidades
+## Funcionalidades
 
-- 🔄 Consulta cotizaciones actualizadas usando la [API de DolarAPI](https://dolarapi.com)
-- 📊 Guarda un registro histórico en `historico.csv` (fecha, tipo de dólar, compra, venta)
-- 🚨 Envía alertas por Telegram cuando algún dólar supera un umbral configurable, definido individualmente para cada tipo
-- ⏰ Se ejecuta automáticamente cada hora en la nube con **GitHub Actions**: guarda los datos nuevos en el repo y el dashboard online se actualiza solo
+- Consulta cotizaciones actualizadas usando la [API de DolarAPI](https://dolarapi.com)
+- Guarda un registro histórico en `historico.csv` (fecha, tipo de dólar, compra, venta)
+- Envía alertas por Telegram cuando algún dólar supera un umbral configurable, definido individualmente para cada tipo
+- Se ejecuta automáticamente cada hora en la nube con **GitHub Actions**: guarda los datos nuevos en el repo y el dashboard online se actualiza solo
 
-## 📸 Ejemplo de uso
+## Ejemplo de uso
 
+```text
 Oficial: compra $1485 - venta $1535
 Blue: compra $1535 - venta $1555
 Bolsa: compra $1530.4 - venta $1536.6
@@ -22,11 +23,11 @@ Bolsa: compra $1530.4 - venta $1536.6
 
 ✅ Cotizaciones guardadas en historico.csv
 🚨 Alerta enviada: Blue superó $1650
+```
 
+## Dashboard
 
-## 📈 Dashboard
-
-🔗 **Ver online:** https://alexisrobledoo.github.io/cotizador-dolar-ar/
+**Ver online:** https://alexisrobledoo.github.io/cotizador-dolar-ar/
 
 Página web que lee `historico.csv` y muestra:
 
@@ -39,7 +40,7 @@ Página web que lee `historico.csv` y muestra:
 
 Hecho con HTML, CSS, JavaScript y [Chart.js](https://www.chartjs.org/). Para verlo en tu compu, abrí `index.html` con la extensión Live Server de VS Code.
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - Python 3.14
 - [Requests](https://docs.python-requests.org/) — para las consultas HTTP
@@ -47,7 +48,7 @@ Hecho con HTML, CSS, JavaScript y [Chart.js](https://www.chartjs.org/). Para ver
 - Telegram Bot API — para el sistema de alertas
 - Módulo `csv` y `datetime` — para el registro histórico
 
-## 🚀 Cómo usarlo
+## Cómo usarlo
 
 **1. Cloná el repositorio**
 ```bash
@@ -73,7 +74,7 @@ TELEGRAM_CHAT_ID = "tu_chat_id"
 python cotizador.py
 ```
 
-## ⚙️ Personalización
+## Personalización
 
 Podés ajustar los umbrales de alerta editando el diccionario `UMBRALES` en `cotizador.py`:
 
@@ -85,17 +86,17 @@ UMBRALES = {
 }
 ```
 
-## 📌 Próximas mejoras
+## Próximas mejoras
 
 - [x] Bot interactivo que responda preguntas en tiempo real
 - [x] Gráficos de la evolución histórica
 - [x] Interfaz web simple (dashboard)
 
-## 👤 Autor
+## Autor
 
 Alexis Robledo — Estudiante de Tecnicatura en Programación (UGR)
 [LinkedIn](https://linkedin.com/in/alexis-daniel-robledo)
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo la licencia MIT — ver el archivo [LICENSE](LICENSE) para más detalles.
